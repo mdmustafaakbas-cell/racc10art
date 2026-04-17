@@ -5,11 +5,10 @@ export const metadata = {
   description: "Tüm epoksi tablo ve kaligrafi ayna koleksiyonu.",
 };
 
-export default async function UrunlerPage({
+export default function UrunlerPage({
   searchParams,
 }: {
-  searchParams: Promise<{ kategori?: string }>;
+  searchParams: { kategori?: string };
 }) {
-  const params = await searchParams;
-  return <ProductsClient category={params.kategori} />;
+  return <ProductsClient category={searchParams.kategori} />;
 }
